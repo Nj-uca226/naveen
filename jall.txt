@@ -1,0 +1,38 @@
+class library:
+    def __init__(self,books):
+        self.books=books
+    def list_books(self):
+        print("available books")
+        for book in self.books:
+            print(book)
+    def borrow_book(self,borrow_book):
+        if borrow_book in self.books:
+            print("get tha book")
+            self.books.remove(borrow_book)
+        else:
+            print("book will not in tha laibrery")
+    def resive_book(self,resive_book):
+        print("you have return tha book")
+        self.books.append(resive_book)
+books=["c","c++","python","java"]
+o=library(books)
+msg = """
+    1.display tha book
+    2.borrow tha book
+    3.resive tha book
+"""
+while True:
+    print(msg)
+    ch=int(input("enter tha number"))
+    if ch==1:
+        o.list_books()
+    elif ch==2:
+        books= input("enter tha book name to barrow")
+        o.borrow_book(books)
+    elif ch==3:
+        books=input("enter tha book name to resive")
+        o.resive_book(books)
+    else:
+        print(" thank you come again")
+        quik()
+    
